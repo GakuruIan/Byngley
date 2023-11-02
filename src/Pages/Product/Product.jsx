@@ -5,7 +5,9 @@ import {useDispatch} from 'react-redux'
 import { useParams } from 'react-router-dom';
 import axios from 'axios'
 import Loader from '../../Components/Loader/Loader'
-import { useSelector } from 'react-redux';
+import { toast} from "react-toastify";
+import Toastify from '../../Components/Toastify/Toastify';
+
 
 const Product = () => {
   let { id } = useParams();
@@ -21,7 +23,6 @@ const Product = () => {
   useEffect(() => {
     setisLoading(true);
     const FetchedProduct =async()=>{ 
-      
         await axios.get(`http://localhost:8000/product/${id}`)
         .then(response=>{
           if(response.status === 200){
@@ -54,7 +55,17 @@ const Product = () => {
   }
   
   const handleCart =()=>{
-    dispatch(addProducts({...product,quantity,size,color}))
+    const {_id,title,price} = product
+
+    const Product = {
+      _id,
+      title,
+      price,
+      Image:product.Images[0].path
+    }
+    
+    dispatch(addProducts({...Product,quantity,size,color}))
+    toast.success('Product added to cart')
   } 
 
 
@@ -67,15 +78,16 @@ const handleColor =(e)=>{
 }
 
   return (
-   <>
+   <div className='py-4 md:mt-20 md:px-6 px-0 h-full relative'>
         {
-          isLoading ? <Loader text="Loading...."/> 
+          isLoading ? <Loader text="Loading...."/>
              : 
-          <div className='py-4 md:mt-20 md:px-6 px-0 h-full' >
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="px-2">
-                      <div className="h-auto md:h-3/4 w-full mb-4">
-                        <img src={product.Images[0]?.path} alt="" srcSet=""className="h-full w-full object-cover"/>
+          <div className='' >
+            <Toastify/>
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-4">
+                  <div className="px-2 ">
+                      <div className="h-auto w-full mb-4">
+                        <img src={product.Images[0]?.path} alt="" srcSet=""className="h-[450px] w-full object-cover"/>
                       </div>
                       <div className="grid grid-cols-4 md:grid-cols-4 gap-2 md:gap-4">
                           {
@@ -171,10 +183,10 @@ const handleColor =(e)=>{
 
             
             {/* related products */}
-            <Row title="Related Products"/>
+               <Row title="Related Products"/>
           </div>
         }
-   </>
+   </div>
   )
 }
 

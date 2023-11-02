@@ -19,9 +19,9 @@ const Banner = () => {
       };
   return (
          <Slider {...settings} className="slider">
-                <div className="relative  w-full md:mt-16">
+                <div className="relative  w-full md:mt-24">
                     <div className="relative  w-full overflow-hidden after:clear-both after:block after:content-['']">
-                        <div className="relative h-[60vh]  w-full mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none">
+                        <div className="relative h-[65vh]  w-full mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none">
                         <img
                             src={baby}
                             className=" h-full object-cover block w-full "
@@ -30,7 +30,7 @@ const Banner = () => {
                             <div className="flex items-center flex-col justify-center">
                                 <h5 className="text-5xl md:text-8xl">Baby Clothes</h5>
                                 <p className='text-base my-6'>
-                                Some representative placeholder content for the first slide.
+                                  Some representative placeholder content for the first slide.
                                 </p>
                                 <button className="bg-indigo-700 px-4 py-2 w-60 flex items-center gap-4 justify-center  hover:bg-indigo-800 cursor-pointer">Shop now 
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -42,9 +42,9 @@ const Banner = () => {
                         </div>
                     </div>
                 </div>
-                <div className="relative  w-full md:mt-16">
+                <div className="relative  w-full md:mt-24">
                     <div className="relative  w-full overflow-hidden after:clear-both after:block after:content-['']">
-                        <div className="relative h-[60vh]  w-full mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none">
+                        <div className="relative h-[65vh]  w-full mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none">
                         <img
                             src={model}
                             className=" h-full object-cover block w-full "
@@ -65,9 +65,9 @@ const Banner = () => {
                         </div>
                     </div>
                 </div>
-                <div className="relative  w-full md:mt-16">
+                <div className="relative  w-full md:mt-24">
                     <div className="relative  w-full overflow-hidden after:clear-both after:block after:content-['']">
-                        <div className="relative h-[60vh]  w-full mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none">
+                        <div className="relative h-[65vh]  w-full mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none">
                         <img
                             src={shoe}
                             className=" h-full object-cover block w-full "

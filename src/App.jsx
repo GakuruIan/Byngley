@@ -16,7 +16,9 @@ const Layout=()=>{
   return (
      <div className="bg-[#Fefefe] text-gray-800 dark:bg-[#1E1E1E] dark:text-white h-full">
         <Navbar/>
-        <Outlet/>
+        <div className="min-h-[calc(100vh-200px)] ">
+            <Outlet/>
+        </div>
         <Footer/>
       </div>
   )
